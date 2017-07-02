@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=10
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>890</y>
+      <w>250</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>_Ball_
+--
+-m_radius: int
+-m_angle: float
+-m_speed: float
+--
++Ball(sf::Color, sf::Vector2f, int)
+
++getRadius(): int
++getAngle(): float
++getSpeed(): float
+
++setX(): void
++setY(): void
++setAngle(): void
++setSpeed(): void
+
++backPreviousPos(float): void
++reset(): void
++update(float): void
++draw(sf::RenderTarget, sf::RenderStates): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>880</y>
+      <w>250</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>_Bonus_
+--
+#m_radius: int
+#m_lifetime: sf::Time
+--
++Bonus(sf::Color, sf::Vector2f, int)
+
++getLifetime(): sf::Time
++getRadius(): int
+
++effect(Robot* robot): void
++update(float): void
++draw(sf::RenderTarget, sf::RenderStates): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>1140</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>_BonusPoint_
+--
+
+--
++BonusPoint(sf::Color, sf::Vector2f, int)
+
++effect(Robot* robot): void
++update(float): void
++draw(sf::RenderTarget, sf::RenderStates): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>1030</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;180.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>780</y>
+      <w>340</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;60.0;10.0;60.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>780</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;220.0;60.0;220.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>1140</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>_BonusVitesse_
+--
+
+--
++BonusVitesse(sf::Color, sf::Vector2f, int)
+
++effect(Robot* robot): void
++update(float): void
++draw(sf::RenderTarget, sf::RenderStates): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>1030</y>
+      <w>220</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;200.0;70.0;200.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>320</y>
+      <w>230</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>_Field_
+--
+-m_dim: sf::Vector2f
+-m_center: sf::Vector2f
+
+-m_elements: std::vector&lt;Element*&gt;
+-m_robots: std::vector&lt;Robot*&gt;
+-m_goals: std::vector&lt;Goal*&gt;
+--
++Field()
++update(float)
++draw(sf::RenderTarget, sf::RenderStates)
+-checkCollisionBorder(Robot*): void 	
+-checkCollisionBorder(Ball*): void
+-checkGoal(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>500</y>
+      <w>190</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;170.0;50.0;10.0;50.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1120</x>
+      <y>680</y>
+      <w>250</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>_Robot_
+--
+#m_color: sf::Color
+#m_center: sf::Vectorf
+#m_angle: float
+#m_speed: float
+#m_mass: float
+#m_numPlayer: int
+#m_isControlled: bool
+#m_radius: int
+#m_zone: int[2]
+--
++Robot(sf::color, int, int)
+
++move(): void
++update(action, float): void
++draw(sf::RenderTarget, sf::RenderStates): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>500</y>
+      <w>350</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;330.0;50.0;330.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>600</y>
+      <w>250</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>_Element_
+--
+#m_mass: float
+#m_color: sf::Color
+#m_center: sf::Vector2f
+--
++Element(sf::Color, sf::Vector2f, float)
+
++getX(): int
++getY(): int
++getMass(): float
+
++update(float): void
++draw(sf::RenderTarget, sf::RenderStates): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>980</y>
+      <w>260</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>_RobotAtk_
+--
+
+--
++RobotAtk(sf::Color, int)
+
++update(action, float): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>980</y>
+      <w>260</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>_RobotDef_
+--
+
+--
++RobotAtk(sf::Color, int)
+
++update(action, float): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>860</y>
+      <w>190</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;170.0;80.0;170.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>860</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;80.0;10.0;80.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>600</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>_But_
+--
+-m_color: sf::Color
+-m_center: sf::Vector2f
+-m_dim: sf::Vector2f
+-m_numPlayer: int
+--
++Goal(sf::Color, int, sf::Vector2f, sf::Vecor2f)
+
++getX(): int
++getY(): int
++getW(): int
++getH(): int
+
++update(float): void
++draw(sf::RenderTarget, sf::RenderStates): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1120</x>
+      <y>320</y>
+      <w>250</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>_Joueur_
+--
+-m_robotControlled: int
+-m_score: int
+-m_color: sf::Color
+-m_num: int
+-m_nom: std::string
+
+-m_robots: std::vector&lt;Robot*&gt;
+--
++Player(int)
+
++getEquipe(): std::vector&lt;Robot*&gt;
++setControlledRobot(int): void
++setColor(sf::Color): void
+
++getScore(): int
+
+-changeRobotControlled(): void
+-update(float): void
+-draw(sf::RenderTarget, sf::RenderStates): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1240</x>
+      <y>570</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>90</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>_Game_
+--
+-m_horloge: sf::Time
+-m_Joueur: Player[2]
+-m_field: Field
+--
++Game()
+
++update(float)
++draw(sf::RenderTarget, sf::RenderStates)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>200</y>
+      <w>380</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;360.0;70.0;360.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>200</y>
+      <w>340</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
+  </element>
+</diagram>
